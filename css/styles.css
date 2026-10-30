@@ -1,11 +1,74 @@
-/* Lesson 17: Toggle Navigation */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* always start by adding your font familys to the family so it can inherit down. */
+    font-size: 1.125rem;
+}
 /* Step 1: Header layout (flex + flex-wrap) */
+header {
+    display: flex; /* TIP: draw your boxes out first to plan your flexbox out.*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #3b2a4a;
+    color: #f2f2f2;
+}
 
-/* Step 2: Large tap areas */
+main {
+    padding: 1rem;
+}
+
+h1,
+p {
+    margin-bottom: 1.25rem;
+}
+
+/* Step 2: Large tap areas +nav styling so that it always sits on it's own line. */
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+nav {
+    /* this will force the nav to always be on the second line. */
+    flex-basis: 100%; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+nav a {
+    display: block;
+    padding: 1rem;
+    color: #f2f2f2;
+    text-decoration: none;
+    border-top: 1px solid lightgrey;
+}
+
+nav li:first-child a { /* this says your grabbinf the first li and the a inside it */
+    border-top: none;
+}
 
 /* Step 3: Default (closed) state */
 
+nav {
+    max-height: 0; /* this causes the nav contianer to shrink but not the content itself */
+    overflow: hidden; /* this will hide the links */
+    transition: max-height 0.4s ease-in-out;
+}
+
 /* Step 4: Open state + transition */
+/* This class is not written in the HTML - the JS will add this to the HTML when the btn is clicked */
+
+.open-nav {
+    max-height: 20rem;
+}
 
 /* Step 5: Larger screens */
