@@ -23,7 +23,7 @@ main {
     padding: 1rem;
 }
 
-h1,
+h2,
 p {
     margin-bottom: 1.25rem;
 }
@@ -52,7 +52,11 @@ nav a {
     border-top: 1px solid lightgrey;
 }
 
-nav li:first-child a { /* this says your grabbinf the first li and the a inside it */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* red, green, blue, alpha which changes the opacity */
+}
+
+nav li:first-child a { /* this says your grabbing the first li and the a inside it */
     border-top: none;
 }
 
@@ -72,3 +76,21 @@ nav {
 }
 
 /* Step 5: Larger screens */
+@media (width > 800px) {
+    .toggle-btn {
+        display: none; /* doesnt need to be accessible so you can get rid of it all together */
+    }
+
+    nav {
+        max-height: unset;
+        flex-basis: auto; /* however you changed the content before is how you should select it and ovewrite it. */
+    }
+
+    nav a {
+        border: none;
+    }
+
+    nav ul {
+        display: flex;
+    }
+}
