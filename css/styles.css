@@ -17,10 +17,18 @@ header {
     padding: 1rem;
     background-color: #3b2a4a;
     color: #f2f2f2;
+
+    /* part 2 code */
+    position: fixed;
+    left: 0;
+    right: 0;
 }
 
 main {
-    padding: 1rem;
+    /* padding: 1rem; */
+
+    /* part 2 code */
+    padding: 126px 1rem 1rem;
 }
 
 h2,
@@ -37,6 +45,13 @@ p {
 nav {
     /* this will force the nav to always be on the second line. */
     flex-basis: 100%; 
+
+    /* part 2 code */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: #3b2a4a;
 }
 
 nav ul {
@@ -66,6 +81,8 @@ nav {
     max-height: 0; /* this causes the nav contianer to shrink but not the content itself */
     overflow: hidden; /* this will hide the links */
     transition: max-height 0.4s ease-in-out;
+
+    position: absolute; /* part 2 code */
 }
 
 /* Step 4: Open state + transition */
@@ -84,6 +101,9 @@ nav {
     nav {
         max-height: unset;
         flex-basis: auto; /* however you changed the content before is how you should select it and ovewrite it. */
+
+        /* part 2 code */
+        position: unset; /* this resets the position absolute in your nav when you reach a big screen */
     }
 
     nav a {
